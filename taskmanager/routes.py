@@ -1,4 +1,3 @@
-
 from flask import render_template, request, redirect, url_for
 from taskmanager import app, db
 from taskmanager.models import Category, Task
@@ -11,8 +10,7 @@ def home():
 
 @app.route("/categories")
 def categories():
-    categories = list(Category.query.order_by(Category.category_name).all())
-    return render_template("categories.html", categories=categories)
+    return render_template("categories.html")
 
 
 @app.route("/add_category", methods=["GET", "POST"])
